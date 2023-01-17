@@ -22,9 +22,12 @@ import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.work.WorkManager
 
 
 class BlurViewModel(application: Application) : ViewModel() {
+    //work manager instance in your viewmodel
+    private val workManager = WorkManager.getInstance(application)
 
     internal var imageUri: Uri? = null
     internal var outputUri: Uri? = null
